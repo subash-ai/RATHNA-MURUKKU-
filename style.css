@@ -10,6 +10,15 @@ body{
   color:#2b1b0f;
 }
 
+/* Page container */
+main, section{padding:0 8%;}
+
+/* Improve typography */
+h1,h2,h3{font-family:'Segoe UI', Arial, sans-serif;}
+
+/* Buttons */
+.btn{display:inline-block;padding:12px 24px;border-radius:40px;text-decoration:none;font-weight:800}
+
 header{
   width:100%;
   padding:20px 8%;
@@ -196,9 +205,9 @@ nav a:hover{
     align-items:center;
     gap:40px;
 
-    background:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("./hero.jpg/Butter-Murukku-Recipe.jpg");
+  background:
+  linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.15)),
+  url("./hero.jpg/Butter-Murukku-Recipe.jpg");
 
     background-size:cover;
     background-position:center;
@@ -278,6 +287,8 @@ nav a:hover{
   text-align:center;
 }
 
+.grid{grid-template-columns:repeat(2,1fr);}
+
 .products h2,
 .about h2,
 .contact h2{
@@ -333,12 +344,12 @@ nav a:hover{
   margin-bottom:18px;
 }
 
-.product span{
+.product .price{
   display:block;
-  font-size:26px;
-  font-weight:900;
+  font-size:20px;
+  font-weight:800;
   color:#d97706;
-  margin-bottom:20px;
+  margin-bottom:16px;
 }
 
 .product button{

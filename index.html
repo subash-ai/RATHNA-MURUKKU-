@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RATHNA Murukku — Handmade traditional South Indian snacks. Freshly prepared, hygienically packed, available for retail and bulk orders." />
+  <meta property="og:title" content="RATHNA Murukku" />
+  <meta property="og:description" content="Handmade Murukku and South Indian snacks — fresh, crispy, and delivered with care." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./hero.jpg/Butter-Murukku-Recipe.jpg" />
+  <link rel="icon" href='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 fill=%22%23f4b43f%22/%3E%3Ctext x=%2250%22 y=%2260%22 font-size=%2270%22 text-anchor=%22middle%22 font-family=%22Segoe UI,Arial%22 fill=%22%232b1608%22%3ER%3C/text%3E%3C/svg%3E' />
   <title>RATHNA Murukku</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -12,9 +18,9 @@
   <div class="logo">RATHNA <span>Murukku</span></div>
   <nav>
     <a href="#home">Home</a>
-    <a href="#products">Products</a>
+    <a href="#products">Menu</a>
     <a href="#about">About</a>
-    <a href="#contact">Order</a>
+    <a href="#contact">Contact</a>
   </nav>
   <button class="cart-toggle" id="cartToggle" aria-label="Open cart">
     🛒 <span class="cart-count">0</span>
@@ -32,10 +38,11 @@
     </div>
   </div>
 
-  <div class="hero-card">
+  <div class="hero-card" aria-hidden="false">
     <h3>Today Special</h3>
     <h2>Butter Murukku</h2>
-    <p>Starting from ₹80</p>
+    <p>Starting from ₹80 — order online or via WhatsApp</p>
+    <a class="btn" href="https://wa.me/8754127143">Order Now</a>
   </div>
 </section>
 
@@ -55,7 +62,7 @@
       <img src="./hero.jpg/Butter-Murukku-Recipe.jpg" alt="Butter Murukku">
       <h3>Butter Murukku</h3>
       <p>Light, crispy and rich in taste.</p>
-      <span>₹10</span>
+      <span class="price">₹10 / piece</span>
       <button type="button">Add to Cart</button>
     </div>
 
@@ -65,7 +72,7 @@
       <img src="./hero.jpg/images.jpg" alt="AACHU Murukku">
       <h3>AACHU Murukku</h3>
       <p>Classic South Indian traditional snack.</p>
-      <span>₹15</span>
+      <span class="price">₹15 / piece</span>
       <button type="button">Add to Cart</button>
     </div>
 
