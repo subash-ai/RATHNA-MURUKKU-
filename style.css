@@ -8,10 +8,15 @@
 body{
   background:#f7f3ec;
   color:#2b1b0f;
-  line-height:1.7;
+  line-height:1.75;
 }
 
 /* Page container */
+body > * {
+  max-width:1500px;
+  margin:0 auto;
+}
+
 main, section{padding:0 8%;}
 
 /* Improve typography */
@@ -72,7 +77,12 @@ nav a{
   text-decoration:none;
   margin-left:28px;
   font-weight:600;
-  transition: color .2s ease;
+  transition: color .2s ease, transform .2s ease;
+}
+
+nav a:hover{
+  color:#f4b43f;
+  transform:translateY(-1px);
 }
 
 nav a:hover{
@@ -229,7 +239,12 @@ footer{
   background:#160b03;
   color:white;
   text-align:center;
-  padding:22px;
+  padding:28px 0;
+  font-size:14px;
+}
+
+footer p{
+  margin:0;
 }
 
 .cart-panel{
@@ -571,18 +586,22 @@ nav a:hover{
   font-weight:800;
 }
 
-footer{
-  background:#160b03;
-  color:white;
-  text-align:center;
-  padding:22px;
-}
-
 @media(max-width:1000px){
   .section-header,
   .about-inner,
   .contact-grid,
   .test-grid {
+    width:100%;
+  }
+}
+
+@media(max-width:950px){
+  .hero-text,
+  .hero-card,
+  .section-header,
+  .test-grid,
+  .contact-grid,
+  .grid {
     width:100%;
   }
 }
@@ -612,6 +631,10 @@ footer{
     font-size:42px;
   }
 
+  .hero-actions{
+    justify-content:center;
+  }
+
   .features,
   .test-grid,
   .grid,
@@ -621,5 +644,9 @@ footer{
 
   .hero-card{
     margin-top:30px;
+  }
+
+  .contact-grid {
+    gap:24px;
   }
 }
