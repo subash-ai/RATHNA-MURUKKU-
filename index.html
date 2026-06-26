@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RATHNA Murukku</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="logo">RATHNA <span>Murukku</span></div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Order</a>
+  </nav>
+  <button class="cart-toggle" id="cartToggle" aria-label="Open cart">
+    🛒 <span class="cart-count">0</span>
+  </button>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-text">
+    <p class="tag">Fresh • Crispy • Traditional</p>
+    <h1>Premium Handmade Murukku</h1>
+    <p class="sub">Authentic South Indian snacks made with love, packed with freshness, and delivered with quality.</p>
+    <div>
+      <a href="#products" class="btn">Explore Menu</a>
+      <a href="https://wa.me/8754127143" class="btn outline">Order on WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="hero-card">
+    <h3>Today Special</h3>
+    <h2>Butter Murukku</h2>
+    <p>Starting from ₹80</p>
+  </div>
+</section>
+
+<section class="features">
+  <div>✅ Fresh Daily</div>
+  <div>✅ Hygienic Packing</div>
+  <div>✅ Homemade Taste</div>
+  <div>✅ Bulk Orders</div>
+</section>
+
+<section class="products" id="products">
+  <h2>Menu</h2>
+  <p class="section-sub">Choose from our favorite handmade snacks and crispy specials.</p>
+
+  <div class="grid">
+    <div class="product">
+      <img src="./hero.jpg/Butter-Murukku-Recipe.jpg" alt="Butter Murukku">
+      <h3>Butter Murukku</h3>
+      <p>Light, crispy and rich in taste.</p>
+      <span>₹10</span>
+      <button type="button">Add to Cart</button>
+    </div>
+
+
+
+    <div class="product">
+      <img src="./hero.jpg/images.jpg" alt="AACHU Murukku">
+      <h3>AACHU Murukku</h3>
+      <p>Classic South Indian traditional snack.</p>
+      <span>₹15</span>
+      <button type="button">Add to Cart</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div>
+    <h2>Traditional Taste, Modern Quality</h2>
+    <p>We make fresh murukku using carefully selected ingredients and authentic recipes. Every pack is prepared with care to give you the perfect crispy taste.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Place Your Order</h2>
+  <p>Call or WhatsApp us for retail and bulk orders.</p>
+  <a href="https://wa.me/8754127143" class="whatsapp">Order on WhatsApp</a>
+</section>
+
+<aside class="cart-panel" id="cartPanel" aria-hidden="true">
+  <div class="cart-header">
+    <h2>Your Cart</h2>
+    <button class="cart-close" id="cartClose" aria-label="Close cart">×</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <p class="cart-empty">Your cart is empty.</p>
+  </div>
+  <div class="cart-summary">
+    <div class="cart-total"><span>Total</span><strong>₹0</strong></div>
+    <button class="btn clear-cart" id="clearCartBtn" type="button">Clear Cart</button>
+    <button class="btn checkout" id="checkoutBtn" type="button">Checkout</button>
+  </div>
+</aside>
+
+<footer>
+  <p>© 2026 RATHNA Murukku | Fresh Traditional Snacks</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
