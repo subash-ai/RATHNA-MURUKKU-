@@ -27,6 +27,7 @@
   </button>
 </header>
 
+<main>
 <section class="hero" id="home">
   <div class="hero-text">
     <p class="tag">Fresh • Crispy • Traditional</p>
@@ -79,6 +80,48 @@
   </div>
 </section>
 
+<section class="testimonials" aria-label="Customer reviews">
+  <h2>What customers say</h2>
+  <div class="test-grid">
+    <blockquote>
+      <p>"Absolutely delicious — fresh and crispy! Highly recommend."</p>
+      <cite>— Priya</cite>
+    </blockquote>
+    <blockquote>
+      <p>"Great packaging and fast delivery. Will order again for events."</p>
+      <cite>— Karthik</cite>
+    </blockquote>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div>
+    <h2>Traditional Taste, Modern Quality</h2>
+    <p>We make fresh murukku using carefully selected ingredients and authentic recipes. Every pack is prepared with care to give you the perfect crispy taste.</p>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2>Place Your Order</h2>
+  <p>Call or WhatsApp us for retail and bulk orders, or use the contact form below.</p>
+  <div class="contact-grid">
+    <div>
+      <a href="https://wa.me/8754127143" class="whatsapp">Order on WhatsApp</a>
+      <p class="muted">Phone: <a href="tel:+918754127143">+91 87541 27143</a></p>
+    </div>
+    <form id="contactForm" aria-label="Contact form">
+      <label>Name<input type="text" id="contactName" required></label>
+      <label>Phone<input type="tel" id="contactPhone"></label>
+      <label>Message<textarea id="contactMessage" rows="4" required></textarea></label>
+      <div class="form-actions">
+        <button type="submit" class="btn">Send Message</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
 <section class="about" id="about">
   <div>
     <h2>Traditional Taste, Modern Quality</h2>
@@ -112,5 +155,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="contact.js"></script>
 </body>
 </html>
