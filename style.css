@@ -6,8 +6,9 @@
 }
 
 body{
-  background:#fff9ef;
+  background:#f7f3ec;
   color:#2b1b0f;
+  line-height:1.7;
 }
 
 /* Page container */
@@ -71,14 +72,167 @@ nav a{
   text-decoration:none;
   margin-left:28px;
   font-weight:600;
+  transition: color .2s ease;
 }
 
 nav a:hover{
   color:#f4b43f;
 }
 
+.hero-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  margin-top:30px;
+}
+
+.section-header {
+  max-width:720px;
+  margin:0 auto 40px;
+}
+
+.section-header h2 {
+  font-size:42px;
+  margin-bottom:16px;
+}
+
+.section-header p {
+  color:#5f4a31;
+  font-size:18px;
+  line-height:1.6;
+}
+
+.testimonials {
+  padding:80px 8%;
+  background:#fff7e7;
+}
+
+.test-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+}
+
+.test-grid blockquote {
+  background:white;
+  padding:28px;
+  border-radius:24px;
+  box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+.test-grid blockquote p {
+  color:#3d2a16;
+  font-size:18px;
+  margin-bottom:18px;
+}
+
+.test-grid cite {
+  display:block;
+  color:#7b5a3c;
+  font-size:15px;
+  font-weight:700;
+}
+
+.about {
+  padding:90px 8%;
+  background:#2b1608;
+  color:white;
+  text-align:center;
+}
+
+.about-inner {
+  max-width:760px;
+  margin:0 auto;
+}
+
+.about p {
+  max-width:700px;
+  margin:auto;
+  font-size:19px;
+  color:#f8e7c7;
+  line-height:1.8;
+}
+
+.contact {
+  padding:80px 8%;
+  background:#fff0d5;
+}
+
+.contact-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  align-items:start;
+}
+
+.contact-info {
+  padding:32px;
+  background:#fffdf8;
+  border-radius:24px;
+  box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+.contact-info .muted {
+  color:#5f4a31;
+  margin-top:18px;
+  line-height:1.8;
+}
+
+.contact-info a {
+  color:#2b1608;
+  text-decoration:none;
+}
+
+#contactForm {
+  display:grid;
+  gap:18px;
+  background:white;
+  padding:32px;
+  border-radius:24px;
+  box-shadow:0 20px 50px rgba(0,0,0,.08);
+}
+
+#contactForm label {
+  display:flex;
+  flex-direction:column;
+  font-weight:700;
+  color:#4a2d12;
+  gap:10px;
+}
+
+#contactForm input,
+#contactForm textarea {
+  border:1px solid #dcc5a7;
+  border-radius:16px;
+  padding:14px 16px;
+  font-family:'Segoe UI', Arial, sans-serif;
+  font-size:16px;
+  color:#2b1608;
+  resize:none;
+}
+
+.form-actions {
+  margin-top:10px;
+}
+
+.whatsapp {
+  background:#25D366;
+  color:white;
+  padding:16px 38px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:800;
+  display:inline-block;
+}
+
+footer{
+  background:#160b03;
+  color:white;
+  text-align:center;
+  padding:22px;
+}
+
 .cart-panel{
-  position:fixed;
   top:0;
   right:-420px;
   width:360px;
@@ -255,21 +409,25 @@ nav a:hover{
 
 .hero-card{
   background:rgba(255,255,255,.15);
-  backdrop-filter:blur(10px);
-  border:1px solid rgba(255,255,255,.3);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.28);
   border-radius:30px;
   padding:45px;
-  box-shadow:0 20px 60px rgba(0,0,0,.35);
+  box-shadow:0 30px 80px rgba(0,0,0,.25);
 }
 
 .hero-card h3{
   color:#f4b43f;
   margin-bottom:15px;
+  font-size:18px;
+  letter-spacing:1px;
+  text-transform:uppercase;
 }
 
 .hero-card h2{
-  font-size:42px;
-  margin-bottom:15px;
+  font-size:38px;
+  margin-bottom:18px;
+  line-height:1.1;
 }
 
 .features{
@@ -356,10 +514,17 @@ nav a:hover{
   border:none;
   background:#4b2508;
   color:white;
-  padding:12px 28px;
+  padding:14px 30px;
   border-radius:30px;
   font-weight:700;
   cursor:pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.product button:hover{
+  background:#f4b43f;
+  color:#2b1608;
+  transform:translateY(-2px);
 }
 
 .product button:hover{
@@ -413,6 +578,15 @@ footer{
   padding:22px;
 }
 
+@media(max-width:1000px){
+  .section-header,
+  .about-inner,
+  .contact-grid,
+  .test-grid {
+    width:100%;
+  }
+}
+
 @media(max-width:850px){
   header{
     flex-direction:column;
@@ -439,7 +613,13 @@ footer{
   }
 
   .features,
-  .grid{
+  .test-grid,
+  .grid,
+  .contact-grid {
     grid-template-columns:1fr;
+  }
+
+  .hero-card{
+    margin-top:30px;
   }
 }
