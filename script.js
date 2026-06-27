@@ -41,7 +41,7 @@ function renderCart() {
       </div>
       <div class="cart-item-qty">
         <button type="button" data-action="decrease" data-index="${index}">-</button>
-        <span>${item.quantity}</span>
+        <input class="cart-qty-input" type="number" min="1" value="${item.quantity}" data-index="${index}" />
         <button type="button" data-action="increase" data-index="${index}">+</button>
       </div>
       <button class="cart-item-remove" type="button" data-action="remove" data-index="${index}">Remove</button>
@@ -54,13 +54,13 @@ function renderCart() {
   if (totalNode) totalNode.textContent = formatCurrency(total);
 }
 
-function addToCart(name, price) {
+function addToCart(name, price, quantity = 1) {
   const existingItem = cart.find(item => item.name === name);
 
   if (existingItem) {
-    existingItem.quantity += 1;
+    existingItem.quantity += quantity;
   } else {
-    cart.push({ name, price, quantity: 1 });
+    cart.push({ name, price, quantity });
   }
 
   updateCartCount();
@@ -90,6 +90,21 @@ function changeQuantity(index, delta) {
   renderCart();
 }
 
+function setCartQuantity(index, quantity) {
+  if (!cart[index]) {
+    return;
+  }
+
+  if (quantity < 1) {
+    removeFromCart(index);
+    return;
+  }
+
+  cart[index].quantity = quantity;
+  updateCartCount();
+  renderCart();
+}
+
 function openCart() {
   cartPanel.classList.add("open");
   cartPanel.setAttribute("aria-hidden", "false");
@@ -103,10 +118,30 @@ function closeCart() {
 productButtons.forEach(button => {
   const product = button.closest(".product");
   const name = product.querySelector("h3").textContent;
-  const price = Number(product.querySelector("span").textContent.replace("₹", "")) || 0;
+  const priceText = product.querySelector("span.price").textContent;
+  const quantityInput = product.querySelector(".bulk-qty");
+  const price = Number(priceText.replace(/[^0-9.\-]/g, "")) || 0;
 
   button.textContent = "Add to Cart";
-  button.addEventListener("click", () => addToCart(name, price));
+  button.addEventListener("click", () => {
+    const quantity = Math.max(1, Number(quantityInput?.value) || 1);
+    addToCart(name, price, quantity);
+    if (quantityInput) quantityInput.value = "1";
+  });
+});
+
+cartItemsContainer.addEventListener("input", event => {
+  const target = event.target;
+  if (!target.classList.contains("cart-qty-input")) {
+    return;
+  }
+
+  const index = Number(target.dataset.index);
+  const quantity = Math.max(1, Number(target.value) || 1);
+  if (Number(target.value) !== quantity) {
+    target.value = quantity;
+  }
+  setCartQuantity(index, quantity);
 });
 
 cartToggle.addEventListener("click", () => {
